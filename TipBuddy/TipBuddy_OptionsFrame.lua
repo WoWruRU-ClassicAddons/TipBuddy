@@ -136,8 +136,8 @@ function TipBuddy_OptionsFrame_UpdateSliders()
 		TipBuddy_OptionsFrame_SliderCalcEnabled( slider );
 
 		if (index == 1) then
-			low:SetText( "Small" );
-			high:SetText( "Large" );			
+			low:SetText( TB_SMALL );
+			high:SetText( TB_LARGE );			
 		else
 			low:SetText( value.minValue );
 			high:SetText( value.maxValue );			
@@ -193,7 +193,7 @@ function TipBuddy_OptionsFrame_UpdateEditBoxes()
 		local tipTable = TipBuddy_SavedVars[value.type];
 		----TB_AddMessage(value.type);
 		if (not tipTable[value.var]) then
-			DEFAULT_CHAT_FRAME:AddMessage("|cff3366ffSETTING BLANK VAR with: "..TEXT(value.type));
+			DEFAULT_CHAT_FRAME:AddMessage(TB_SETTING_BLANK..TEXT(value.type));
 			tipTable[value.var] = "";
 		end
 		editbox:SetText( tipTable[value.var] );
@@ -527,13 +527,6 @@ function TipBuddy_Background_Cancel(previousValues)
 end
 
 
-TipBuddy_CursorPos = {
-	[1] = "Top",
-	[2] = "Right",
-	[3] = "Left",
-	[4] = "Bottom", 
-};
-
 function TipBuddy_CursorPosDropDown_OnLoad()
 	UIDropDownMenu_Initialize(this, TipBuddy_CursorPosDropDown_Initialize);
 	UIDropDownMenu_SetSelectedValue(this, TipBuddy_SavedVars["general"].cursorpos);
@@ -562,7 +555,7 @@ function TipBuddy_CursorPosDropDown_Initialize()
 	if ( info.value == selectedValue ) then
 		info.checked = 1;
 	end
-	info.tooltipTitle = "Postion the tooltip ABOVE your cursor";
+	info.tooltipTitle = TB_POSITION_ABOVE_CURSOR;
 	UIDropDownMenu_AddButton(info);
 
 	info = {};
@@ -572,7 +565,7 @@ function TipBuddy_CursorPosDropDown_Initialize()
 	if ( info.value == selectedValue ) then
 		info.checked = 1;
 	end
-	info.tooltipTitle = "Position the tooltip to the RIGHT of your cursor";
+	info.tooltipTitle = TB_POSITION_RIGHT_CURSOR;
 	UIDropDownMenu_AddButton(info);
 
 	info = {};
@@ -582,7 +575,7 @@ function TipBuddy_CursorPosDropDown_Initialize()
 	if ( info.value == selectedValue ) then
 		info.checked = 1;
 	end
-	info.tooltipTitle = "Position the tooltip to the LEFT of your cursor";
+	info.tooltipTitle = TB_POSITION_LEFT_CURSOR;
 	UIDropDownMenu_AddButton(info);
 
 	info = {};
@@ -592,16 +585,9 @@ function TipBuddy_CursorPosDropDown_Initialize()
 	if ( info.value == selectedValue ) then
 		info.checked = 1;
 	end
-	info.tooltipTitle = "Position the tooltip BELOW your cursor";
+	info.tooltipTitle = TB_POSITION_BELOW_CURSOR;
 	UIDropDownMenu_AddButton(info);
 end
-
---non-unit tips
-TipBuddy_NonUnitTipPos = {
-	[1] = "Cursor",
-	[2] = "TipBuddyAnchor",
-	[3] = "Smart Anchor", 
-};
 
 function TipBuddy_NonUnitTipPosDropDown_OnLoad()
 	UIDropDownMenu_Initialize(this, TipBuddy_NonUnitTipPosDropDown_Initialize);
@@ -632,7 +618,7 @@ function TipBuddy_NonUnitTipPosDropDown_Initialize()
 	if ( info.value == selectedValue ) then
 		info.checked = 1;
 	end
-	info.tooltipTitle = "Non-Unit tooltips will\nfollow the cursor";
+	info.tooltipTitle = TB_NONUNIT_TOOLTIPS_CURSOR;
 	UIDropDownMenu_AddButton(info);
 
 	info = {};
@@ -642,7 +628,7 @@ function TipBuddy_NonUnitTipPosDropDown_Initialize()
 	if ( info.value == selectedValue ) then
 		info.checked = 1;
 	end
-	info.tooltipTitle = "Non-Unit tooltips will\nattach themselves to\nthe TipBuddyAnchor";
+	info.tooltipTitle = TB_NONUNIT_TOOLTIPS_ANCHOR;
 	UIDropDownMenu_AddButton(info);
 
 	info = {};
@@ -652,17 +638,10 @@ function TipBuddy_NonUnitTipPosDropDown_Initialize()
 	if ( info.value == selectedValue ) then
 		info.checked = 1;
 	end
-	info.tooltipTitle = "Non-Unit tooltips will attempt to\nattach themselves to the button\nor object you have your mouse\nover in a smart position";
+	info.tooltipTitle = TB_NONUNIT_TOOLTIPS_SMART;
 	UIDropDownMenu_AddButton(info);
 
 end
-
---Tooltip Style (Compact, Default, Advanced)
-TipBuddy_TipStyle = {
-	[1] = "Default Mode",
-	[2] = "Compact Mode",
-	[3] = "Advanced Mode", 
-};
 
 function TipBuddy_TipStyleDropDown_OnLoad( type )
 	this.type = type;
@@ -741,7 +720,7 @@ function TipBuddy_TipStyleDropDown_Initialize()
 	if ( info.value == selectedValue ) then
 		info.checked = 1;
 	end
-	info.tooltipTitle = "Default mode is similar\nto Blizzard's default tooltips,\nbut much more customizable";
+	info.tooltipTitle = TB_DEFAULT_MODE_TOOLTIP;
 	UIDropDownMenu_AddButton(info);
 
 	info = {};
@@ -752,7 +731,7 @@ function TipBuddy_TipStyleDropDown_Initialize()
 	if ( info.value == selectedValue ) then
 		info.checked = 1;
 	end
-	info.tooltipTitle = "Compact Mode has a \ncleaner, smaller style.";
+	info.tooltipTitle = TB_COMPACT_MODE_TOOLTIP;
 	UIDropDownMenu_AddButton(info);
 
 	info = {};
@@ -763,17 +742,10 @@ function TipBuddy_TipStyleDropDown_Initialize()
 	if ( info.value == selectedValue ) then
 		info.checked = 1;
 	end
-	info.tooltipTitle = "For Advanced Users only.";
+	info.tooltipTitle = TB_ADVANCED_MODE_TOOLTIP;
 	UIDropDownMenu_AddButton(info);
 
 end
-
---Tooltip Backdrop Colors
-TipBuddy_BDColor = {
-	[1] = "Custom",
-	[2] = "Difficulty",
-	[3] = "Reaction", 
-};
 
 function TipBuddy_BDColorDropDown_OnLoad( type )
 	this.type = type;
@@ -867,7 +839,7 @@ function TipBuddy_BDColorDropDown_Initialize()
 	if ( info.value == selectedValue ) then
 		info.checked = 1;
 	end
-	info.tooltipTitle = "Choose your custom color by\nclicking the box to the right.";
+	info.tooltipTitle = TB_COOSE_CUSTOM_COLOR;
 	UIDropDownMenu_AddButton(info);
 
 	info = {};
@@ -878,7 +850,7 @@ function TipBuddy_BDColorDropDown_Initialize()
 	if ( info.value == selectedValue ) then
 		info.checked = 1;
 	end
-	info.tooltipTitle = "Color will be determined\nby the unit's difficulty\n(red, yellow, grey, etc).";
+	info.tooltipTitle = TB_COLOR_BY_DIFFICULTY;
 	UIDropDownMenu_AddButton(info);
 
 	info = {};
@@ -889,17 +861,10 @@ function TipBuddy_BDColorDropDown_Initialize()
 	if ( info.value == selectedValue ) then
 		info.checked = 1;
 	end
-	info.tooltipTitle = "Color is determined by th\n unit's reaction towards you.";
+	info.tooltipTitle = TB_COLOR_BY_REACTION;
 	UIDropDownMenu_AddButton(info);
 
 end
-
---Tooltip Backdrop BORDER Colors
-TipBuddy_BDBColor = {
-	[1] = "Custom",
-	[2] = "Difficulty",
-	[3] = "Reaction", 
-};
 
 function TipBuddy_BDBColorDropDown_OnLoad( type )
 	this.type = type;
@@ -989,7 +954,7 @@ function TipBuddy_BDBColorDropDown_Initialize()
 	if ( info.value == selectedValue ) then
 		info.checked = 1;
 	end
-	info.tooltipTitle = "Choose your custom color by\nclicking the box to the right.";
+	info.tooltipTitle = TB_COOSE_CUSTOM_COLOR;
 	UIDropDownMenu_AddButton(info);
 
 	info = {};
@@ -1000,7 +965,7 @@ function TipBuddy_BDBColorDropDown_Initialize()
 	if ( info.value == selectedValue ) then
 		info.checked = 1;
 	end
-	info.tooltipTitle = "Color will be determined\nby the unit's difficulty\n(red, yellow, grey, etc).";
+	info.tooltipTitle = TB_COLOR_BY_DIFFICULTY;
 	UIDropDownMenu_AddButton(info);
 
 	info = {};
@@ -1011,7 +976,7 @@ function TipBuddy_BDBColorDropDown_Initialize()
 	if ( info.value == selectedValue ) then
 		info.checked = 1;
 	end
-	info.tooltipTitle = "Color is determined by th\n unit's reaction towards you.";
+	info.tooltipTitle = TB_COLOR_BY_REACTION;
 	UIDropDownMenu_AddButton(info);
 
 end
@@ -1059,15 +1024,6 @@ function TipBuddy_ResetAnchorPos()
 	TipBuddy_SavedVars["general"].framepos_T = TipBuddy_Header_Frame:GetTop();
 end
 
-TipBuddy_AnchorPos = {
-	[1] = "Top Right",
-	[2] = "Top Left",
-	[3] = "Bottom Right",
-	[4] = "Bottom Left", 
-	[5] = "Top Center", 
-	[6] = "Bottom Center", 
-};
-
 function TipBuddy_Anchor_OnClick(button)
 	-- If Rightclick bring up the options menu
 	if ( button == "RightButton" ) then
@@ -1110,7 +1066,7 @@ function TipBuddy_AnchorDropDown_Initialize()
 	if ( info.value == selectedValue ) then
 		info.checked = 1;
 	end
-	info.tooltipTitle = "Anchor tooltip to the TOP RIGHT\nof the TipBuddyAnchor";
+	info.tooltipTitle = TB_ANCHOR_TOOLTIP_TOP_RIGHT;
 	UIDropDownMenu_AddButton(info);
 
 	info = {};
@@ -1120,7 +1076,7 @@ function TipBuddy_AnchorDropDown_Initialize()
 	if ( info.value == selectedValue ) then
 		info.checked = 1;
 	end
-	info.tooltipTitle = "Anchor tooltip to the TOP LEFT\nof the TipBuddyAnchor";
+	info.tooltipTitle = TB_ANCHOR_TOOLTIP_TOP_LEFT;
 	UIDropDownMenu_AddButton(info);
 
 	info = {};
@@ -1130,7 +1086,7 @@ function TipBuddy_AnchorDropDown_Initialize()
 	if ( info.value == selectedValue ) then
 		info.checked = 1;
 	end
-	info.tooltipTitle = "Anchor tooltip to the BOTTOM RIGHT\nof the TipBuddyAnchor";
+	info.tooltipTitle = TB_ANCHOR_TOOLTIP_BOTTOM_RIGHT;
 	UIDropDownMenu_AddButton(info);
 
 	info = {};
@@ -1140,7 +1096,7 @@ function TipBuddy_AnchorDropDown_Initialize()
 	if ( info.value == selectedValue ) then
 		info.checked = 1;
 	end
-	info.tooltipTitle = "Anchor tooltip to the BOTTOM LEFT\nof the TipBuddyAnchor";
+	info.tooltipTitle = TB_ANCHOR_TOOLTIP_BOTTOM_LEFT;
 	UIDropDownMenu_AddButton(info);
 
 	info = {};
@@ -1150,7 +1106,7 @@ function TipBuddy_AnchorDropDown_Initialize()
 	if ( info.value == selectedValue ) then
 		info.checked = 1;
 	end
-	info.tooltipTitle = "Anchor tooltip to the BOTTOM CENTER\nof the TipBuddyAnchor";
+	info.tooltipTitle = TB_ANCHOR_TOOLTIP_BOTTOM_CENTER;
 	UIDropDownMenu_AddButton(info);
 
 	info = {};
@@ -1160,7 +1116,7 @@ function TipBuddy_AnchorDropDown_Initialize()
 	if ( info.value == selectedValue ) then
 		info.checked = 1;
 	end
-	info.tooltipTitle = "Anchor tooltip to the TOP CENTER\nof the TipBuddyAnchor";
+	info.tooltipTitle = TB_ANCHOR_TOOLTIP_TOP_CENTER;
 	UIDropDownMenu_AddButton(info);
 end
 

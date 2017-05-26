@@ -2,6 +2,7 @@
 ## Title: TipBuddy
 ## Version: 2.22
 ## Notes: Enhanced, configurable unit tooltip.
+## Notes-ruRU: Расширенный и настраиваемый экран подсказок.
 ## Author: Chester
 ## SavedVariables: TipBuddy_SavedVars
 ## OptionalDeps: myAddOns, MobInfo2, MobHealth, MobHealth2

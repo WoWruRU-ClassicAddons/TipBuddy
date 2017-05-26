@@ -100,7 +100,7 @@ function TipBuddy_OnEvent()
 		end
 
 		if( DEFAULT_CHAT_FRAME ) then
-			DEFAULT_CHAT_FRAME:AddMessage("|cffffd200TipBuddy |cffffff00v"..TIPBUDDY_VERSION.." loaded.");
+			DEFAULT_CHAT_FRAME:AddMessage(TB_VERSION_LOADED..TIPBUDDY_VERSION..TB_VERSION_LOADED_TWO);
 		end
 
 		TipBuddy_InitializeTextColors();
@@ -110,7 +110,7 @@ function TipBuddy_OnEvent()
 		if (myAddOnsFrame) then	
 			myAddOnsList.TipBuddy = {
 					name = "|cff20ff20TipBuddy", 
-					description = "Enhanced, configurable unit tooltip.", 
+					description = TB_DESCRIPTION, 
 					version = "|cffffff00"..TIPBUDDY_VERSION,
 					author = "chester",
 					email = "chester.dent@gmail.com",
@@ -203,15 +203,15 @@ function TipBuddy_SlashCommand(msg)
 	if( msg == "rankname" ) then
 		if (TipBuddy_SavedVars["general"].rankname == 1) then
 			TipBuddy_SavedVars["general"].rankname = 0;
-			DEFAULT_CHAT_FRAME:AddMessage("|cff20ff20TipBuddy: No longer showing full rank title in name.");
+			DEFAULT_CHAT_FRAME:AddMessage(TB_NO_SHOWING_RANK);
 		else
 			TipBuddy_SavedVars["general"].rankname = 1;
-			DEFAULT_CHAT_FRAME:AddMessage("|cff20ff20TipBuddy: Showing full rank titles in name.");
+			DEFAULT_CHAT_FRAME:AddMessage(TB_SHOWING_RANK);
 		end
 	end
 	if( msg == "resetanchor" ) then
 		TipBuddy_ResetAnchorPos();
-		DEFAULT_CHAT_FRAME:AddMessage("|cff20ff20TipBuddy: Resetting TipBuddyAnchor position.");
+		DEFAULT_CHAT_FRAME:AddMessage(TB_RESET_POSITION);
 	end
 	if( msg == "report" ) then
 		TipBuddy_ReportVarStats();
@@ -219,10 +219,10 @@ function TipBuddy_SlashCommand(msg)
 	if( msg == "blizdefault" ) then
 		if (TipBuddy_SavedVars["general"].blizdefault == 1) then
 			TipBuddy_SavedVars["general"].blizdefault = 0;
-			DEFAULT_CHAT_FRAME:AddMessage("|cff20ff20TipBuddy: Default tooltips are now enhanced.");
+			DEFAULT_CHAT_FRAME:AddMessage(TB_DEFAULT_TOOLTIPS);
 		else
 			TipBuddy_SavedVars["general"].blizdefault = 1;
-			DEFAULT_CHAT_FRAME:AddMessage("|cff20ff20TipBuddy: Default tooltips are no longer enhanced.");
+			DEFAULT_CHAT_FRAME:AddMessage(TB_DEFAULT_TOOLTIPS_NOT);
 		end
 	end
 	if (string.find(msg, "extras") ~= nil) then
@@ -232,7 +232,7 @@ function TipBuddy_SlashCommand(msg)
 			----TB_AddMessage(type);
 		end
 		if (not type) then
-			DEFAULT_CHAT_FRAME:AddMessage("|cff20ff20TipBuddy: Please specify a target type (ex: /tip extras pc_friend)");
+			DEFAULT_CHAT_FRAME:AddMessage(TB_SPECIFY_TARGET_TYPE);
 			return;
 		end
 		return;
@@ -256,7 +256,7 @@ function TipBuddy_SlashCommand(msg)
 			--TipBuddy_SavedVars["general"].gtt_scale = (UIParent:GetScale() * TipBuddy.s);
 			TipBuddy_SavedVars["general"].gtt_scale = TipBuddy.s;
 		else
-			DEFAULT_CHAT_FRAME:AddMessage("|cff20ff20TipBuddy: Please type a scale number after 'scale' (valid numbers: 0.25-2)");
+			DEFAULT_CHAT_FRAME:AddMessage(TB_TYPE_SCALE_NUMBER);
 		end
 		return;
 	end

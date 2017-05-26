@@ -27,7 +27,7 @@ function TitanPanelTipBuddyIcon_OnEvent()
 		if (not TitanPanelButton_UpdateButton) then
 			return;
 		end
-		TB_AddMessage("---------------------------------------------------loading titan");
+		TB_AddMessage(TB_LOADING_TITAN);
 		TitanPanelButton_OnLoad();
 		TitanPanelButton_UpdateButton(TIPBUDDYTITAN);
 	end

@@ -23,22 +23,6 @@ TB_YLW_TXT = "|cffffff00"
 TB_BLE_TXT = "|cff3366ff"
 TB_PNK_TXT = "|cffff00ff"
 
--- Menu Button
-TB_MENU_BUTTON_TOOLTIP = "Open TipBuddy\noptions menu.";
-TB_TIPBUDDYANCHOR_TOOLTIP = "Left Click and drag to move the anchor around.\nRight Click to select which corner the tooltip will attach to.";
-TB_TIPBUDDYANCHORCLOSE_TOOLTIP = "Click this to HIDE the TipBuddyAnchor.\n\n"..TB_GRY_TXT.."(To show it again, open the options menu and click the 'Display TipBuddyAnchor' button under the 'Anchoring' section.)";
-
--- Checkboxes
-TB_PC_FRIEND = "Friendly Players";
-TB_PC_PARTY = "Friendly Players in Party";
-TB_PC_ENEMY = "Enemy Players";
-TB_NPC_FRIEND = "Friendly NPCs";
-TB_NPC_NEUTRAL = "Neutral NPCs";
-TB_NPC_ENEMY = "Enemy NPCs";
-TB_PET_FRIEND = "Friendly Pets";
-TB_PET_ENEMY = "Enemy Pets";
-TB_CORPSE = "Corpses";
-
 TB_DEFAULTBG_COLOR = {r = 0.09, g = 0.09, b = 0.19};
 
 TipBuddy = {};
@@ -61,104 +45,7 @@ TB_ANCHOR = {
 	["BOTTOMLEFT"] = {a="TOPRIGHT",b="BOTTOMLEFT"}, 
 };
 
-TB_OPTION_COMPACTONLY = TB_YLW_TXT.."(Compact Mode Only)\n";
-TB_OPTION_DEFAULTONLY = TB_YLW_TXT.."(Default Mode Only)\n";
-TB_OPTION_GLD = "Guild";
-TB_OPTION_GLD_TOOLTIP = TB_NML_TXT.."Show Target's:\n"..TB_WHT_TXT.."Guild Name";
-TB_OPTION_GLD_TITLE = "Title";
-TB_OPTION_GLD_TITLE_TOOLTIP = TB_NML_TXT.."Show Target's:\n"..TB_WHT_TXT.."Title "..TB_GRY_TXT.."(if available)";
-TB_OPTION_HTH = "Health Bar";
-TB_OPTION_HTH_TOOLTIP = TB_OPTION_COMPACTONLY..TB_NML_TXT.."Show Target's:\n"..TB_WHT_TXT.."Health Bar\nMana Bar "..TB_GRY_TXT.."(if available)";
-TB_OPTION_RAC = "Race";
-TB_OPTION_RAC_TOOLTIP = TB_NML_TXT.."Show Target's:\n"..TB_WHT_TXT.."Race\n"..TB_GRY_TXT.." (\"Level--Class\" must be shown as well)";
-TB_OPTION_CFC = "City Faction";
-TB_OPTION_CFC_TOOLTIP = TB_NML_TXT.."Show Target's:\n"..TB_WHT_TXT.."City Faction\n"..TB_GRY_TXT.." (Orgrimmar, Stormwind, etc - If available)";
-TB_OPTION_CLS = "Level -- Class";
-TB_OPTION_CLS_TOOLTIP = TB_NML_TXT.."Show Target's:\n"..TB_WHT_TXT.."Level\n---\nClass Name";
-TB_OPTION_CLS_TYPE = "Level -- Class/Type";
-TB_OPTION_CLS_TYPE_TOOLTIP = TB_NML_TXT.."Show Target's:\n"..TB_WHT_TXT.."Level\n---\nClass Name\n"..TB_WHT_TXT.."Creature Family Name\n"..TB_DGY_TXT.."(\"Bear\", \"Spider\")\n"..TB_WHT_TXT.."Creature Type Name\n"..TB_DGY_TXT.."(\"Humanoid\", \"Beast\")\n"..TB_GRY_TXT.."(depending on availibility)";
--- resists aren't used  :(
-TB_OPTION_FAC = "Faction/PvP State";
-TB_OPTION_FAC_TOOLTIP = TB_NML_TXT.."Show Target's:\n"..TB_WHT_TXT.."Faction and PvP setting.  Will show unit's faction emblem by default or text only if text option is set"..TB_GRY_TXT.." (if they are currently flagged for PvP or FFA)";
-TB_OPTION_BFF = "Buffs/Debuffs";
-TB_OPTION_BFF_TOOLTIP = TB_NML_TXT.."Show Target's:\n"..TB_WHT_TXT.."Buffs\n"..TB_WHT_TXT.."Debuffs";
-TB_OPTION_XTR = "Extras";
-TB_OPTION_XTR_TOOLTIP = TB_NML_TXT.."Show Target's:\n"..TB_WHT_TXT.."Extra information inserted into the tooltip such as by another tooltip mod";
-TB_OPTION_RNK = "Rank Icon";
-TB_OPTION_RNK_TOOLTIP = TB_NML_TXT.."Show Target's:\n"..TB_WHT_TXT.."Rank icon to the left of their name"..TB_GRY_TXT.." (if the are ranked in PvP)";
-TB_OPTION_TRG = "Target's Target";
-TB_OPTION_TRG_TOOLTIP = TB_NML_TXT.."Show Target's:\n"..TB_WHT_TXT.."Currently selected target"..TB_GRY_TXT.."\n(the target's target name is color coded as follows:\n"..TB_WHT_TXT.."WHITE"..TB_GRY_TXT..": Is targeting you\n"..TB_GRN_TXT.."GREEN"..TB_GRY_TXT..": Is targeting a friendly player\n"..TB_BLE_TXT.."BLUE"..TB_GRY_TXT..": Is targeting a non-hostile NPC\n"..TB_RED_TXT.."RED"..TB_GRY_TXT..": Is targeting a hostile enemy\n"..TB_PNK_TXT.."PURPLE"..TB_GRY_TXT..": Is targeting one of your party members)\n";
-TB_OPTION_RNM = "Rank Title Text";
-TB_OPTION_RNM_TOOLTIP = TB_NML_TXT.."Show Target's:\n"..TB_WHT_TXT.."Rank Title which is displayed before their name"..TB_GRY_TXT.." (if the are ranked in PvP)";
 
-TB_TEXTVARS_HELP_1 =	"$nl\n$nm\n$gu\n$gt\n$lv\n$cl\n$rc\n$fa\n$cf\n$hc\n$hm\n$hp\n$mc\n$mm\n$mp\n$ns\n$nt\n$nf\n$tp\n$re\n$pr\n$pn\n$pv\n$ml\n$df\n$tn\n   \n   \nColoring:\n@Crn\n@Crg\n@Cdf\n@Ccl\n@Ctt\n@Ccp\n@Cor\n@Cwt\n@Cgy\n@Crd\n@Cgn\n@Cyw\n@Cbl\n@Cpk"
-TB_TEXTVARS_HELP_2 =	"New line (\\n also works)\nUnit's Name\nUnit's Guild or Title\nUnit's Title Rank in Guild\nUnit's Level\nUnit's Class\nRace (players only)\nFaction (players only)\nCity Faction (NPCs only)\nCurrent Health (actual)\nMax Health (actual)\nHealth as a percent\nCurrent Mana (actual)\nMax Mana (actual)\nMana as a percent\nNPC Classification (Elite, Boss, etc.)\nNPC Type (Beast, Humanoid, etc.)\nNPC Family (Bear, Cat, etc.)\nTapped (TAPPED or nothing)\nUnit Reaction (Hostile, Neutral)\nPVP Rank\nPVP Rank Number\nPVP Flagged (PvP or Free For All)\nMana Label (Mana, Energy, Rage, etc.)\nUnit Difficulty (Difficult, Trivial, etc.)\nUnit Target's Target Name\n   \n   \n   \nReaction Color(Name)\nReaction Color(Guild)\nDifficulty Color\nClass Color\nTarget's Target (only if unit has target)\nCorpse Color (only if unit is corpse)\nOrange\nWhite\nGrey\nRed\nGreen\nYellow\nBlue\nPink"
-
-
-TB_OPTION_CURSOR = "TipBuddy Above Cursor";
-TB_OPTION_CURSOR_TOOLTIP = "Enable to position TipBuddy directly above your cursor's position instead of on the side";
-TB_OPTION_SCALE = "Compact Scale";
-TB_OPTION_SCALE_TOOLTIP = TB_OPTION_COMPACTONLY..TB_NML_TXT.."Changes the size of the "..TB_WHT_TXT.."Compact"..TB_NML_TXT.." TipBuddy tooltip";
-TB_OPTION_GTTSCALE = "Default Tooltip Scale";
-TB_OPTION_GTTSCALE_TOOLTIP = TB_OPTION_DEFAULTONLY..TB_NML_TXT.."Changes the scale of the "..TB_WHT_TXT.."Default"..TB_NML_TXT.." tooltip";
-TB_OPTION_ANCHORED = "Anchor Unit Tips";
-TB_OPTION_ANCHORED_TOOLTIP = "Enable to anchor your unit tips to the TipBuddyAnchor.  Non-unit tips (such as buttons) are not affected by this and have their own setting in the dropdown below this\n\nTo show the TipBuddyAnchor after you've hidden it, click the 'Display TipBuddyAnchor' button";
-TB_OPTION_DELAY = "Tooltip Delay Time";
-TB_OPTION_DELAY_TOOLTIP = "The time it takes to start fading from the moment your cursor leaves a unit";
-TB_OPTION_FADETIME = "Tooltip Fade Time";
-TB_OPTION_FADETIME_TOOLTIP = "The time it takes to fade TipBuddy out (starts fading after the 'Delay' has expired)";
-TB_OPTION_COLORBUTTON_TOOLTIP = "Select the tooltip background color to display for this unit type";
-TB_OPTION_COLORBUTTON_BOR_TOOLTIP = "Select the tooltip border color to display for this unit type";
-TB_OPTION_SAMEGUILD = "Guild BG Color";
-TB_OPTION_SAMEGUILD_TOOLTIP = "Select the tooltip background color to display for players in the same guild as you";
-TB_OPTION_SAMEGUILDB = "Guild Border Color";
-TB_OPTION_SAMEGUILDB_TOOLTIP = "Select the tooltip border color to display for players in the same guild as you";
-TB_OPTION_NONUNITBG = "Non-Unit BG Color";
-TB_OPTION_NONUNITBG_TOOLTIP = "Select the tooltip background color to display for everything that isn't a unit."..TB_GRY_TXT.."\n(buttons, icons, items, spells, etc)";
-TB_OPTION_NONUNITBGB = "Non-Unit Border Color";
-TB_OPTION_NONUNITBGB_TOOLTIP = "Select the tooltip border color to display for everything that isn't a unit."..TB_GRY_TXT.."\n(buttons, icons, items, spells, etc)";
-TB_OPTION_CLASSCOLOR = "Colored Class Text";
-TB_OPTION_CLASSCOLOR_TOOLTIP = "Enable this to have the class text for players be color coded";
-TB_OPTION_FADEDEFAULT = "Fade Default Tooltip";
-TB_OPTION_FADEDEFAULT_TOOLTIP = "Enable this to make the Default tooltip mode fade away instead of disappearing immediately";
-TB_OPTION_BLIZZARDDEFAULT = "Blizzard Default";
-TB_OPTION_BLIZZARDDEFAULT_TOOLTIP = "Enable this to display your tooltips in the default Blizzard style and not take advantage of the coloring or formatting that TipBuddy provides."..TB_GRY_TXT.."\n(You will still be able to take advantage of the anchoring, background colors, buffs, pvp icon and rank icon options, however)";
-TB_OPTION_REPOSITIONMODS = "Keep Tips On Screen";
-TB_OPTION_REPOSITIONMODS_TOOLTIP = "Enabling this will keep all of your tooltips from extending off the side of the screen  (usually by other mods)";
-TB_OPTION_UBERTIPANCH = "Anchor Non-Unit Tips";
-TB_OPTION_UBERTIPANCH_TOOLTIP = "Enable this to have your non-unit tips (buttons, etc) anchor to the TipBuddyAnchor instead of the cursor.\n\nIf the 'Use TipBuddyAnchor' checkbox is checked, then all tooltips will anchor the the TipBuddyAnchor automatically";
-TB_OPTION_DIFFBACKGROUND = "Difficulty as Backdrop"
-TB_OPTION_DIFFBACKGROUND_TOOLTIP = "Enabling this will display your tooltip backdrops to be colored based on the units difficulty to you instead of the custom colors"
-
-TB_OPTION_NONUNITPOS_TOOLTIP = "Select how you want your non-unit tips to anchor";
-TB_OPTION_CURSORPOS_TOOLTIP = "Select the position of the tooltip in relation to your cursor";
-TB_OPTION_COLORTEXTBUTTON_TOOLTIP = "Options menu for selecting your tooltip text colors";
-TB_OPTION_STYLEMODE_TOOLTIP = "Choose which style tooltip to use for this unit type";
-
-TB_OPTION_BORDER_TOOLTIP = "Choose how you would like your tooltip BORDERS colored";
-TB_OPTION_BACKDROP_TOOLTIP = "Choose how you would like your tooltip BACKDROPS colored";
-
-TB_OPTION_TRG_PL = "Friendly Players";
-TB_OPTION_TRG_PL_TOOLTIP = "";
-TB_OPTION_TRG_EN = "Enemies";
-TB_OPTION_TRG_EN_TOOLTIP = "";
-TB_OPTION_TRG_NP = "Non-Hostile NPCs";
-TB_OPTION_TRG_NP_TOOLTIP = "";
-TB_OPTION_TRG_PA = "Party Members";
-TB_OPTION_TRG_PA_TOOLTIP = "";
-TB_OPTION_TRG_2L = "Seperate Line";
-TB_OPTION_TRG_2L_TOOLTIP = "Check to show the unit's target on a seperate line than their name";
-
-TB_RESETVARS_DIALOG = "Are you sure you wish to reset all of your settings?";
-
-TipBuddy_OptionsFrame_Sliders = {
-	{ text = TB_OPTION_SCALE, type = "general", var = "scalemod", minValue = 0, maxValue = 6, valueStep = 1, tooltipText = TB_OPTION_SCALE_TOOLTIP},
-	{ text = TB_OPTION_DELAY, type = "general", var = "delaytime", minValue = 0.0, maxValue = 4.0, valueStep = 0.1, tooltipText = TB_OPTION_DELAY_TOOLTIP},
-	{ text = TB_OPTION_FADETIME, type = "general", var = "fadetime", minValue = 0.0, maxValue = 4.0, valueStep = 0.1, tooltipText = TB_OPTION_FADETIME_TOOLTIP},
-	{ text = "X Offset", type = "general", var = "offset_x", minValue = -60, maxValue = 60, valueStep = 1, tooltipText = "The offset your tooltip will display in relation to the cursor on the horizontal axis"},
-	{ text = "Y Offset", type = "general", var = "offset_y", minValue = -60, maxValue = 60, valueStep = 1, tooltipText = "The offset your tooltip will display in relation to the cursor on the vertical axis"},
-	{ text = TB_OPTION_GTTSCALE, type = "general", var = "gtt_scale", minValue = 0.5, maxValue = 1.5, valueStep = 0.05, tooltipText = TB_OPTION_GTTSCALE_TOOLTIP},
-};
 
 TipBuddy_ColorPicker_Buttons = {
 	{ frame = "TipBuddy_OptionsFrame_ColorPicker1", type = "pc_friend", var = "bgcolor", tooltipText = TB_OPTION_COLORBUTTON_TOOLTIP},
@@ -185,51 +72,7 @@ TipBuddy_ColorPicker_Buttons = {
 	{ text = TB_OPTION_NONUNITBGB, frame = "TipBuddy_OptionsFrame_ColorPicker22", type = "general", var = "bgbcolor", tooltipText = TB_OPTION_NONUNITBGB_TOOLTIP},
 };
 
-TipBuddy_ColorPicker_Buttons_Text = {
 
-	{ text = "Hostile", frame = "TipBuddy_OptionsFrame_ColorPicker_Text1", type = "textcolors", var = "nam_hos", tooltipText = ""},
-	{ text = "Neutral", frame = "TipBuddy_OptionsFrame_ColorPicker_Text2", type = "textcolors", var = "nam_neu", tooltipText = ""},
-	{ text = "Friendly", frame = "TipBuddy_OptionsFrame_ColorPicker_Text3", type = "textcolors", var = "nam_fri", tooltipText = ""},
-	{ text = "Caution", frame = "TipBuddy_OptionsFrame_ColorPicker_Text4", type = "textcolors", var = "nam_cau", tooltipText = ""},
-	{ text = "Friendly PvP", frame = "TipBuddy_OptionsFrame_ColorPicker_Text5", type = "textcolors", var = "nam_pvp", tooltipText = ""},
-	{ text = "Tapped by You", frame = "TipBuddy_OptionsFrame_ColorPicker_Text6", type = "textcolors", var = "nam_tpp", tooltipText = ""},
-	{ text = "Tapped by Other", frame = "TipBuddy_OptionsFrame_ColorPicker_Text7", type = "textcolors", var = "nam_tpo", tooltipText = ""},
-
-	{ text = "Hostile", frame = "TipBuddy_OptionsFrame_ColorPicker_Text8", type = "textcolors", var = "gld_hos", tooltipText = ""},
-	{ text = "Neutral", frame = "TipBuddy_OptionsFrame_ColorPicker_Text9", type = "textcolors", var = "gld_neu", tooltipText = ""},
-	{ text = "Friendly", frame = "TipBuddy_OptionsFrame_ColorPicker_Text10", type = "textcolors", var = "gld_fri", tooltipText = ""},
-	{ text = "Caution", frame = "TipBuddy_OptionsFrame_ColorPicker_Text11", type = "textcolors", var = "gld_cau", tooltipText = ""},
-	{ text = "Friendly PvP", frame = "TipBuddy_OptionsFrame_ColorPicker_Text12", type = "textcolors", var = "gld_pvp", tooltipText = ""},
-	{ text = "Tapped by You", frame = "TipBuddy_OptionsFrame_ColorPicker_Text13", type = "textcolors", var = "gld_tpp", tooltipText = ""},
-	{ text = "Tapped by Other", frame = "TipBuddy_OptionsFrame_ColorPicker_Text14", type = "textcolors", var = "gld_tpo", tooltipText = ""},
-	{ text = "Guild Mates", frame = "TipBuddy_OptionsFrame_ColorPicker_Text15", type = "textcolors", var = "gld_mte", tooltipText = ""},
-
-	{ text = "Impossible",		frame = "TipBuddy_OptionsFrame_ColorPicker_Text16", type = "textcolors", var = "lvl_imp", tooltipText = ""},
-	{ text = "Very Difficult",	frame = "TipBuddy_OptionsFrame_ColorPicker_Text17", type = "textcolors", var = "lvl_vdf", tooltipText = ""},
-	{ text = "Difficult",		frame = "TipBuddy_OptionsFrame_ColorPicker_Text18", type = "textcolors", var = "lvl_dif", tooltipText = ""},
-	{ text = "Standard",		frame = "TipBuddy_OptionsFrame_ColorPicker_Text19", type = "textcolors", var = "lvl_stn", tooltipText = ""},
-	{ text = "Trivial",		frame = "TipBuddy_OptionsFrame_ColorPicker_Text20", type = "textcolors", var = "lvl_trv", tooltipText = ""},
-	{ text = "Same Faction",	frame = "TipBuddy_OptionsFrame_ColorPicker_Text21", type = "textcolors", var = "lvl_sfc", tooltipText = ""},
-
-	{ text = "Mage",		frame = "TipBuddy_OptionsFrame_ColorPicker_Text22", type = "textcolors", var = "cls_mag", tooltipText = ""},
-	{ text = "Warlock",	frame = "TipBuddy_OptionsFrame_ColorPicker_Text23", type = "textcolors", var = "cls_wlk", tooltipText = ""},
-	{ text = "Priest",	frame = "TipBuddy_OptionsFrame_ColorPicker_Text24", type = "textcolors", var = "cls_pri", tooltipText = ""},
-	{ text = "Druid",		frame = "TipBuddy_OptionsFrame_ColorPicker_Text25", type = "textcolors", var = "cls_drd", tooltipText = ""},
-	{ text = "Shaman",	frame = "TipBuddy_OptionsFrame_ColorPicker_Text26", type = "textcolors", var = "cls_shm", tooltipText = ""},
-	{ text = "Paladin",	frame = "TipBuddy_OptionsFrame_ColorPicker_Text27", type = "textcolors", var = "cls_pal", tooltipText = ""},
-	{ text = "Rogue",		frame = "TipBuddy_OptionsFrame_ColorPicker_Text28", type = "textcolors", var = "cls_rog", tooltipText = ""},
-	{ text = "Hunter",	frame = "TipBuddy_OptionsFrame_ColorPicker_Text29", type = "textcolors", var = "cls_hun", tooltipText = ""},
-	{ text = "Warrior",	frame = "TipBuddy_OptionsFrame_ColorPicker_Text30", type = "textcolors", var = "cls_war", tooltipText = ""},
-	{ text = "Other Class",	frame = "TipBuddy_OptionsFrame_ColorPicker_Text31", type = "textcolors", var = "cls_oth", tooltipText = ""},
-
-	{ text = "Rare Text",	frame = "TipBuddy_OptionsFrame_ColorPicker_Text32", type = "textcolors", var = "elite_rar", tooltipText = ""},
-	{ text = "Boss Text",	frame = "TipBuddy_OptionsFrame_ColorPicker_Text33", type = "textcolors", var = "elite_bss", tooltipText = ""},
-
-	{ text = "Corpse Text",	frame = "TipBuddy_OptionsFrame_ColorPicker_Text34", type = "textcolors", var = "other_crp", tooltipText = ""},
-	{ text = "Other Text",	frame = "TipBuddy_OptionsFrame_ColorPicker_Text35", type = "textcolors", var = "other_unk", tooltipText = ""},
-	{ text = "Race Text",	frame = "TipBuddy_OptionsFrame_ColorPicker_Text36", type = "textcolors", var = "other_rac", tooltipText = ""},
-	{ text = "City Faction",	frame = "TipBuddy_OptionsFrame_ColorPicker_Text37", type = "textcolors", var = "other_ctf", tooltipText = ""},
-};
 
 TB_Op_Checks = { 
 	{ frame = "TB_Op_Check1", text = TB_OPTION_OFF, type = "pc_friend", var = "off", tooltipText = TB_OPTION_OFF_TOOLTIP },
@@ -439,133 +282,6 @@ TB_EditBoxes = {
 	{ frame = "TB_EditBox_09_2", text = TB_OPTION_TRG, type = "corpse",	var = "ebx2", tooltipText = TB_OPTION_TRG_TOOLTIP },
 };
 
--- I hate doing this, but Bliz won't give us a function to look up an NPC's Faction.  
--- This list will certainly break down at some point if/when more get added by Bliz.  :(
--- The factions are broken out by first letter to make the search much faster
--- thanks to Quindo Ma from worldofwar for obtaining this full list!  6/25/06
-TB_Factions = { 
-	["A"] = {
-		[1] = "Alliance",
-		[2] = "Alliance Forces",
-		[3] = "Argent Dawn",
-		},
-	["B"] = {
-		[1] = "Blackfathom",
-		[2] = "Bloodsail Buccaneers",
-		[3] = "Blue",
-		[4] = "Booty Bay",
-		[5] = "Brood of Nozdormu",
-		[6] = "Burning Blade",
-		},
-	["C"] = {
-		[1] = "Caer Darrow",
-		[2] = "Cenarion Circle",
-		},
-	["D"] = {
-		[1] = "Dalaran",
-		[2] = "Dark Iron Dwarves",
-		[3] = "Darkmoon Faire",
-		[4] = "Darkspear Trolls",
-		[5] = "Darnassus",
-		[6] = "Defias Brotherhood",
-		[7] = "Defias Brotherhood Traitor",
-		},
-	["E"] = {
-		[1] = "Everlook",
-		},
-	["F"] = {
-		[1] = "Forlorn Spirit",
-		[2] = "Frostwolf Clan",
-		},
-	["G"] = {
-		[1] = "Gadgetzan",
-		[2] = "Gelkis Clan Centaur",
-		[3] = "Gnomeregan Exiles",
-		},
-	["H"] = {
-		[1] = "Hillsbrad, Southshore Mayor",
-		[2] = "Hillsbrad Militia",
-		[3] = "Horde",
-		[4] = "Horde Forces",
-		[5] = "Human, Night Watch",
-		[6] = "Hydraxian Waterlords",
-		},
-	["I"] = {
-		[1] = "Ironforge",
-		},
-	["J"] = {
-		[1] = "Jaedenar",
-		},
-	["K"] = {
-		[1] = "Kurzen's Mercenaries",
-		},
-	["L"] = {
-		[1] = "Lost Ones",
-		},
-	["M"] = {
-		[1] = "Magram Clan Centaur",
-		[2] = "Makrura",
-		[3] = "Maraudine",
-		[4] = "Might of Kalimdor",
-		},
-	["N"] = {
-		[1] = "Nethergarde",
-		[2] = "Nethergarde Caravan",
-		},
-	["O"] = {
-		[1] = "Ogre",
-		[2] = "Orgrimmar",
-		},
-	["R"] = {
-		[1] = "Ratchet",
-		[2] = "Ravasaur Trainers",
-		[3] = "Ravenholdt",
-		[4] = "Red",
-		[5] = "Revantusk Trolls",
-		},
-	["S"] = {
-		[1] = "Scarlet Crusade",
-		[2] = "Scourge Invaders",
-		[3] = "Shadowsilk Poacher",
-		[4] = "Shatterspear Trolls",
-		[5] = "Shen'dralar",
-		[6] = "Silithid",
-		[7] = "Silithid Attackers",
-		[8] = "Silverwing Sentinels",
-		[9] = "Southsea Freebooters",
-		[10] = "Steamwheedle Cartel",
-		[11] = "Stormpike Guard",
-		[12] = "Stormwind",
-		[13] = "Syndicate",
-		},
-	["T"] = {
-		[1] = "Taskmaster Fizzule",
-		[2] = "The Defilers",
-		[3] = "The Ironforge Brigade",
-		[4] = "The League of Arathor",
-		[5] = "Theramore",
-		[6] = "Thorium Brotherhood",
-		[7] = "Thunder Bluff",
-		[8] = "Timbermaw Hold",
-		[9] = "Training Dummy",
-		},
-	["U"] = {
-		[1] = "Undercity",
-		},
-	["V"] = {
-		[1] = "Venture Company",
-		},
-	["W"] = {
-		[1] = "Wailing Caverns",
-		[2] = "Warsong Outriders",
-		[3] = "Wildhammer Clan",
-		[4] = "Wintersaber Trainers",
-		},
-	["Z"] = {
-		[1] = "Zandalar Tribe",
-		},
-};
-
 function TipBuddy_Variable_Initialize()
 	if ( TipBuddy_SavedVars and TipBuddy_SavedVars["version"] == TIPBUDDY_VERSION ) then
 		return;
@@ -581,7 +297,7 @@ function TipBuddy_Variable_Initialize()
 	end
 	
 	TipBuddy_SavedVars["version"] = TIPBUDDY_VERSION;
-	DEFAULT_CHAT_FRAME:AddMessage("|cff3366ffInitializing TipBuddy Variables");
+	DEFAULT_CHAT_FRAME:AddMessage(TB_INITIALIZING_VARIABLES);
 	--/script DEFAULT_CHAT_FRAME:AddMessage(tonumber(TipBuddy_SavedVars["version"]));
 	if ( TipBuddy_SavedVars["pc_friend"] ) then
 		if ( TipBuddy_SavedVars["pc_friend"]["bgcolor"] == nil ) then

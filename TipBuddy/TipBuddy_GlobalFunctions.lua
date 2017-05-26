@@ -322,7 +322,7 @@ function TipBuddy_ToggleExtras(type, quiet)
 		TipBuddy_SavedVars["npc_enemy"].xtr = 1;
 		TipBuddy_SavedVars["npc_neutral"].xtr = 1;
 		if (not quiet) then
-			DEFAULT_CHAT_FRAME:AddMessage("|cff20ff20TipBuddy: Extras for all target types are now ON");	
+			DEFAULT_CHAT_FRAME:AddMessage(TB_EXTRAS_ON);	
 		end
 		return type;
 	elseif (type == "off") then
@@ -335,21 +335,21 @@ function TipBuddy_ToggleExtras(type, quiet)
 		TipBuddy_SavedVars["npc_enemy"].xtr = 0;
 		TipBuddy_SavedVars["npc_neutral"].xtr = 0;
 		if (not quiet) then
-			DEFAULT_CHAT_FRAME:AddMessage("|cff20ff20TipBuddy: Extras for all target types are now OFF");
+			DEFAULT_CHAT_FRAME:AddMessage(TB_EXTRAS_OFF);
 		end
 		return type;
 	elseif (type ~= nil) then
 		if (not TipBuddy_SavedVars[type]) then
-			DEFAULT_CHAT_FRAME:AddMessage("|cff20ff20TipBuddy: Could not recognize target type: "..type);
+			DEFAULT_CHAT_FRAME:AddMessage(TB_NOT_RECOGNIZE_TYPE..type);
 			return nil;
 		else
 			if (TipBuddy_SavedVars[type].xtr == 1) then
 				TipBuddy_SavedVars[type].xtr = 0;
-				DEFAULT_CHAT_FRAME:AddMessage("|cff20ff20TipBuddy: No longer showing extras for target type: "..type);
+				DEFAULT_CHAT_FRAME:AddMessage(TB_NOT_SHOWING_EXTRAS..type);
 				return type;
 			else
 				TipBuddy_SavedVars[type].xtr = 1;
-				DEFAULT_CHAT_FRAME:AddMessage("|cff20ff20TipBuddy: Now showing extras for target type: "..type);						
+				DEFAULT_CHAT_FRAME:AddMessage(TB_SHOWING_EXTRAS..type);						
 				return type;
 			end
 		end

@@ -8,12 +8,15 @@
 
 <Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
 C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
+	<Include file="Locales\localization.lua"/>
+	<Include file="Locales\localization.ru.lua"/>
+	<Include file="Locales\localization.de.lua"/>
+	<Include file="Locales\localization.fr.lua"/>
 	<Script file="TipBuddy_Initialize.lua"/>
 	<Script file="TipBuddy_GlobalFunctions.lua"/>
 	<Script file="TipBuddy_OptionsFrame.lua"/>
 	<Script file="TipBuddy_Colors.lua"/>
 	<Script file="TipBuddy_Variables.lua"/>
-	<Script file="localization.lua"/>
 	<Script file="TipBuddy.lua"/>
 	<!-- <Script file="TipBuddyTitan.lua"/> -->
 	<Include file="GameTooltipTemplate.xml"/>
@@ -488,7 +491,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 								<Scripts>
 									<OnShow>
 										local text = getglobal(this:GetName().."Text");
-										text:SetText("Show Health Text");
+										text:SetText(TB_SHOW_HEALTH_TEXT);
 										text:SetTextColor(1, 1, 1);
 									</OnShow>
 									<OnEnter>
@@ -507,7 +510,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 								<Scripts>
 									<OnShow>
 										local text = getglobal(this:GetName().."Text");
-										text:SetText("Show Mana Text");
+										text:SetText(TB_SHOW_MANA_TEXT);
 										text:SetTextColor(1, 1, 1);
 									</OnShow>
 									<OnEnter>
@@ -618,7 +621,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 								<Scripts>
 									<OnShow>
 										local text = getglobal(this:GetName().."Text");
-										text:SetText("Show Text Only");
+										text:SetText(TB_SHOW_TEXT_ONLY);
 										text:SetTextColor(1, 1, 1);
 									</OnShow>
 									<OnEnter>
@@ -1154,7 +1157,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 		</Anchors>
 		<Layers>
 			<Layer level="BACKGROUND">
-				<FontString name="$parentLabel" inherits="GameFontNormalSmall" text="Backdrop Color">
+				<FontString name="$parentLabel" inherits="GameFontNormalSmall" text="TB_BACKDROP_COLOR">
 					<Anchors>
 						<Anchor point="BOTTOMLEFT" relativePoint="TOPLEFT">
 							<Offset>
@@ -1181,7 +1184,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 		</Anchors>
 		<Layers>
 			<Layer level="BACKGROUND">
-				<FontString name="$parentLabel" inherits="GameFontNormalSmall" text="Border Color">
+				<FontString name="$parentLabel" inherits="GameFontNormalSmall" text="TB_BORDER_COLOR">
 					<Anchors>
 						<Anchor point="BOTTOMLEFT" relativePoint="TOPLEFT">
 							<Offset>
@@ -1225,7 +1228,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 		</Backdrop>
 		<Layers>
 			<Layer level="OVERLAY">
-				<FontString name="TipBuddy_Header_Text" inherits="ToolTipBuddyText" text="TipBuddyAnchor" justifyH="LEFT">
+				<FontString name="TipBuddy_Header_Text" inherits="ToolTipBuddyText" text="TB_TIPBUDDYANCHOR" justifyH="LEFT">
 					<Size>
 						<AbsDimension x="128" y="24" />
 					</Size>
@@ -1594,7 +1597,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 
 <!-- NAME -->
 			<Layer level="OVERLAY">
-				<FontString name="TipBuddy_TargetName_Text" inherits="ToolTipBuddyText" text="Unknown" justifyH="LEFT">
+				<FontString name="TipBuddy_TargetName_Text" inherits="ToolTipBuddyText" text="TB_UNKNOWN" justifyH="LEFT">
 					<Size>
 						<AbsDimension x="400" y="12" />
 					</Size>
@@ -1623,7 +1626,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 <!-- GUILD -->
 
 			<Layer level="OVERLAY">
-				<FontString name="TipBuddy_TargetGuild_Text" inherits="ToolTipBuddyText" text="None" justifyH="LEFT">
+				<FontString name="TipBuddy_TargetGuild_Text" inherits="ToolTipBuddyText" text="TB_NONE" justifyH="LEFT">
 					<Size>
 						<AbsDimension x="256" y="9" />
 					</Size>
@@ -2265,7 +2268,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 				</Texture>
 			</Layer>
 			<Layer level="OVERLAY">
-				<FontString name="$parentText" inherits="ToolTipBuddyTextOutline" justifyH="LEFT" text="PvP">
+				<FontString name="$parentText" inherits="ToolTipBuddyTextOutline" justifyH="LEFT" text="TB_PVP">
 					<Size>
 						<AbsDimension x="64" y="16" />
 					</Size>
@@ -2301,7 +2304,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 				</Texture>
 			</Layer>
 			<Layer level="OVERLAY">
-				<FontString name="$parentText" inherits="ToolTipBuddyTextOutline" justifyH="LEFT" text="PvP">
+				<FontString name="$parentText" inherits="ToolTipBuddyTextOutline" justifyH="LEFT" text="TB_PVP">
 					<Size>
 						<AbsDimension x="64" y="16" />
 					</Size>
@@ -2691,7 +2694,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 			</OnClick>
 			<OnEnter>
 				GameTooltip:SetOwner(this, "ANCHOR_TOPRIGHT");
-				GameTooltip:SetText(TB_MENU_BUTTON_TOOLTIP, nil, nil, nil, nil, 1);			
+				GameTooltip:SetText(MENU_BUTTON_TOOLTIP, nil, nil, nil, nil, 1);			
 			</OnEnter>
 		</Scripts>
 	</Button>
@@ -2827,7 +2830,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 				</Frames> -->
 				<Layers>
 					<Layer level="OVERLAY">
-						<FontString name="$parent_Title" inherits="GameFontNormal" text="Variable Codes">
+						<FontString name="$parent_Title" inherits="GameFontNormal" text="TB_VARIABLE_CODES">
 							<Color r="1.0" g="1.0" b="0"/>
 							<Anchors>
 								<Anchor point="TOP">
@@ -2859,7 +2862,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 						this:SetBackdropColor(0, 0, 0, 1);
 					</OnLoad>
 					<OnHide>
-						TipBuddy_ShowTextVars:SetText("Show Vars");
+						TipBuddy_ShowTextVars:SetText(TB_SHOW_VARS);
 					</OnHide>
 				</Scripts>
 			</Frame>
@@ -2894,7 +2897,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 						</Backdrop>
 						<Layers>
 							<Layer>
-                                <FontString inherits="GameFontHighlight" text="PLAYERS">
+                                <FontString inherits="GameFontHighlight" text="TB_PLAYERS_CAPS">
                                     <Anchors>
                                         <Anchor point="CENTER">
                                             <Offset>
@@ -2914,7 +2917,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 					</Frame>
 
 					<!-- PLAYERS TABS -->
-					<Button name="$parentTab1" inherits="TabButtonTemplate" text="Friendly" id="1">
+					<Button name="$parentTab1" inherits="TabButtonTemplate" text="TB_FRIENDLY" id="1">
 						<Size>
 							<AbsDimension x="100" y="32"/>
 						</Size>
@@ -2937,7 +2940,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 						</Scripts>
 					</Button>
 
-					<Button name="$parentTab2" inherits="TabButtonTemplate" text="InParty" id="2">
+					<Button name="$parentTab2" inherits="TabButtonTemplate" text="TB_INPARTY" id="2">
 						<Size>
 							<AbsDimension x="100" y="32"/>
 						</Size>
@@ -2960,7 +2963,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 						</Scripts>
 					</Button>
 
-					<Button name="$parentTab3" inherits="TabButtonTemplate" text="Enemy" id="3">
+					<Button name="$parentTab3" inherits="TabButtonTemplate" text="TB_ENEMY" id="3">
 						<Size>
 							<AbsDimension x="100" y="32"/>
 						</Size>
@@ -3717,7 +3720,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 						</Backdrop>
 						<Layers>
 							<Layer>
-                                <FontString inherits="GameFontHighlight" text="NPCs">
+                                <FontString inherits="GameFontHighlight" text="TB_NPCS">
                                     <Anchors>
                                         <Anchor point="CENTER">
                                             <Offset>
@@ -3737,7 +3740,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 					</Frame>
 
 					<!-- NPCS TABS -->
-					<Button name="$parentTab1" inherits="TabButtonTemplate" text="Friendly" id="1">
+					<Button name="$parentTab1" inherits="TabButtonTemplate" text="TB_FRIENDLY" id="1">
 						<Size>
 							<AbsDimension x="100" y="32"/>
 						</Size>
@@ -3760,7 +3763,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 						</Scripts>
 					</Button>
 
-					<Button name="$parentTab2" inherits="TabButtonTemplate" text="Neutral" id="2">
+					<Button name="$parentTab2" inherits="TabButtonTemplate" text="TB_NEUTRAL" id="2">
 						<Size>
 							<AbsDimension x="100" y="32"/>
 						</Size>
@@ -3783,7 +3786,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 						</Scripts>
 					</Button>
 
-					<Button name="$parentTab3" inherits="TabButtonTemplate" text="Enemy" id="3">
+					<Button name="$parentTab3" inherits="TabButtonTemplate" text="TB_ENEMY" id="3">
 						<Size>
 							<AbsDimension x="100" y="32"/>
 						</Size>
@@ -4509,7 +4512,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 						</Backdrop>
 						<Layers>
 							<Layer>
-                                <FontString inherits="GameFontHighlight" text="PETS">
+                                <FontString inherits="GameFontHighlight" text="TB_PETS_CAPS">
                                     <Anchors>
                                         <Anchor point="CENTER">
                                             <Offset>
@@ -4529,7 +4532,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 					</Frame>
 
 					<!-- PET TABS -->
-					<Button name="$parentTab1" inherits="TabButtonTemplate" text="Friendly" id="1">
+					<Button name="$parentTab1" inherits="TabButtonTemplate" text="TB_FRIENDLY" id="1">
 						<Size>
 							<AbsDimension x="100" y="32"/>
 						</Size>
@@ -4552,7 +4555,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 						</Scripts>
 					</Button>
 
-					<Button name="$parentTab2" inherits="TabButtonTemplate" text="Enemy" id="2">
+					<Button name="$parentTab2" inherits="TabButtonTemplate" text="TB_ENEMY" id="2">
 						<Size>
 							<AbsDimension x="100" y="32"/>
 						</Size>
@@ -5053,7 +5056,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 						</Backdrop>
 						<Layers>
 							<Layer>
-                                <FontString inherits="GameFontHighlight" text="CORPSE">
+                                <FontString inherits="GameFontHighlight" text="TB_CORPSE_CAPS">
                                     <Anchors>
                                         <Anchor point="CENTER">
                                             <Offset>
@@ -5396,7 +5399,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 						</Backdrop>
 						<Layers>
 							<Layer>
-								<FontString name="$parentText" inherits="GameFontHighlight" text="GENERAL OPTIONS">
+								<FontString name="$parentText" inherits="GameFontHighlight" text="TB_GENERAL_OPTIONS">
 									<Anchors>
 										<Anchor point="CENTER">
 											<Offset>
@@ -5448,7 +5451,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 						</Anchors>
 						<Layers>
 							<Layer level="BACKGROUND">
-								<FontString name="$parentLabel" inherits="GameFontNormalSmall" text="Tooltip Cursor Position">
+								<FontString name="$parentLabel" inherits="GameFontNormalSmall" text="TB_CURSOR_POSITION">
 									<Anchors>
 										<Anchor point="BOTTOMLEFT" relativePoint="TOPLEFT">
 											<Offset>
@@ -5527,7 +5530,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 						</Anchors>
 						<Layers>
 							<Layer level="BACKGROUND">
-								<FontString name="$parentLabel" inherits="GameFontNormalSmall" text="Non-Unit Tooltips">
+								<FontString name="$parentLabel" inherits="GameFontNormalSmall" text="TB_NON_UNIT_TOOLTIPS">
 									<Anchors>
 										<Anchor point="BOTTOMLEFT" relativePoint="TOPLEFT">
 											<Offset>
@@ -5551,7 +5554,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							</OnLeave>
 						</Scripts>
 					</Frame>
-					<Button name="TipBuddy_ShowAnchorButton" inherits="GameMenuButtonTemplate" text="Display TipBuddyAnchor">
+					<Button name="TipBuddy_ShowAnchorButton" inherits="GameMenuButtonTemplate" text="TB_DISPLAY_TIPBUDDYANCHOR">
 						<Anchors>
 							<Anchor point="BOTTOMLEFT">
 								<Offset>
@@ -5577,7 +5580,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 							</OnClick>
 						</Scripts>
 					</Button>
-					<Button name="TipBuddy_ResetAnchorButton" inherits="GameMenuButtonTemplate" text="Reset TipBuddyAnchor ">
+					<Button name="TipBuddy_ResetAnchorButton" inherits="GameMenuButtonTemplate" text="TB_RESET_TIPBUDDYANCHOR">
 						<Anchors>
 							<Anchor point="TOP" relativeTo="TipBuddy_ShowAnchorButton" relativePoint="BOTTOM">
 								<Offset>
@@ -5632,7 +5635,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 						</Backdrop>
 						<Layers>
 							<Layer>
-								<FontString name="$parentText" inherits="GameFontHighlight" text="ANCHORING OPTIONS">
+								<FontString name="$parentText" inherits="GameFontHighlight" text="TB_ANCHORING_OPTIONS">
 									<Anchors>
 										<Anchor point="CENTER">
 											<Offset>
@@ -5726,7 +5729,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 						</Backdrop>
 						<Layers>
 							<Layer>
-								<FontString name="$parentText" inherits="GameFontHighlight" text="FADING OPTIONS">
+								<FontString name="$parentText" inherits="GameFontHighlight" text="TB_FADING_OPTIONS">
 									<Anchors>
 										<Anchor point="CENTER">
 											<Offset>
@@ -5750,7 +5753,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 
 
 
-			<Button name="TipBuddy_OptionsFrameApply" inherits="GameMenuButtonTemplate" text="Apply">
+			<Button name="TipBuddy_OptionsFrameApply" inherits="GameMenuButtonTemplate" text="TB_APPLY">
 				<Size>
 					<AbsDimension x="80" y="21"/>
 				</Size>
@@ -5767,7 +5770,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 					</OnClick>
 				</Scripts>
 			</Button>
-			<Button name="TipBuddy_OptionsFrameCancel" inherits="GameMenuButtonTemplate" text="Cancel">
+			<Button name="TipBuddy_OptionsFrameCancel" inherits="GameMenuButtonTemplate" text="TB_CANCEL">
 				<Size>
 					<AbsDimension x="80" y="21"/>
 				</Size>
@@ -5784,7 +5787,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 					</OnClick>
 				</Scripts>
 			</Button>
-			<Button name="TipBuddy_OptionsFrameOkay" inherits="GameMenuButtonTemplate" text="Okay">
+			<Button name="TipBuddy_OptionsFrameOkay" inherits="GameMenuButtonTemplate" text="TB_OKAY">
 				<Size>
 					<AbsDimension x="80" y="21"/>
 				</Size>
@@ -5804,7 +5807,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 			</Button>
 
 	<!-- SIDE TAB BUTTONS -->
-			<Button name="TipBuddy_OptionsTabButton_Players" inherits="GameMenuButtonTemplate" text="Players">
+			<Button name="TipBuddy_OptionsTabButton_Players" inherits="GameMenuButtonTemplate" text="TB_PLAYERS">
 				<Size>
 					<AbsDimension x="80" y="21"/>
 				</Size>
@@ -5823,7 +5826,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 					</OnClick>
 				</Scripts>
 			</Button>
-			<Button name="TipBuddy_OptionsTabButton_NPCs" inherits="GameMenuButtonTemplate" text="NPCs">
+			<Button name="TipBuddy_OptionsTabButton_NPCs" inherits="GameMenuButtonTemplate" text="TB_NPCS">
 				<Size>
 					<AbsDimension x="80" y="21"/>
 				</Size>
@@ -5842,7 +5845,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 					</OnClick>
 				</Scripts>
 			</Button>
-			<Button name="TipBuddy_OptionsTabButton_Pets" inherits="GameMenuButtonTemplate" text="Pets">
+			<Button name="TipBuddy_OptionsTabButton_Pets" inherits="GameMenuButtonTemplate" text="TB_PETS">
 				<Size>
 					<AbsDimension x="80" y="21"/>
 				</Size>
@@ -5861,7 +5864,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 					</OnClick>
 				</Scripts>
 			</Button>
-			<Button name="TipBuddy_OptionsTabButton_CORPSE" inherits="GameMenuButtonTemplate" text="Corpse">
+			<Button name="TipBuddy_OptionsTabButton_CORPSE" inherits="GameMenuButtonTemplate" text="TB_CORPSE">
 				<Size>
 					<AbsDimension x="80" y="21"/>
 				</Size>
@@ -5881,7 +5884,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 				</Scripts>
 			</Button>
 
-			<Button name="TipBuddy_OptionsTabButton_General" inherits="GameMenuButtonTemplate" text="General">
+			<Button name="TipBuddy_OptionsTabButton_General" inherits="GameMenuButtonTemplate" text="TB_GENERAL">
 				<Size>
 					<AbsDimension x="80" y="21"/>
 				</Size>
@@ -5900,7 +5903,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 					</OnClick>
 				</Scripts>
 			</Button>
-			<Button name="TipBuddy_OptionsTabButton_Anchoring" inherits="GameMenuButtonTemplate" text="Anchoring">
+			<Button name="TipBuddy_OptionsTabButton_Anchoring" inherits="GameMenuButtonTemplate" text="TB_ANCHORING">
 				<Size>
 					<AbsDimension x="80" y="21"/>
 				</Size>
@@ -5919,7 +5922,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 					</OnClick>
 				</Scripts>
 			</Button>
-			<Button name="TipBuddy_OptionsTabButton_Compact" inherits="GameMenuButtonTemplate" text="Fading">
+			<Button name="TipBuddy_OptionsTabButton_Compact" inherits="GameMenuButtonTemplate" text="TB_FADING">
 				<Size>
 					<AbsDimension x="80" y="21"/>
 				</Size>
@@ -5938,7 +5941,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 					</OnClick>
 				</Scripts>
 			</Button>
-			<Button name="TipBuddy_ShowColorsButton" inherits="GameMenuButtonTemplate" text="Text Colors">
+			<Button name="TipBuddy_ShowColorsButton" inherits="GameMenuButtonTemplate" text="TB_TEXT_COLORS">
 				<Size>
 					<AbsDimension x="80" y="21"/>
 				</Size>
@@ -5972,7 +5975,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 					</OnLeave>
 				</Scripts>
 			</Button>
-			<Button name="TipBuddy_ShowTextVars" inherits="GameMenuButtonTemplate" text="Show Vars">
+			<Button name="TipBuddy_ShowTextVars" inherits="GameMenuButtonTemplate" text="TB_SHOW_VARS">
 				<Size>
 					<AbsDimension x="80" y="21"/>
 				</Size>
@@ -5994,15 +5997,15 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 					<OnClick>
 						if (TB_TextVariablesFrame:IsVisible()) then
 							TB_TextVariablesFrame:Hide();
-							TipBuddy_ShowTextVars:SetText("Show Vars");
+							TipBuddy_ShowTextVars:SetText(TB_SHOW_VARS);
 						else
 							TB_TextVariablesFrame:Show();
-							TipBuddy_ShowTextVars:SetText("Hide Vars");
+							TipBuddy_ShowTextVars:SetText(TB_HIDE_VARS);
 						end
 					</OnClick>
 				</Scripts>
 			</Button>
-			<Button name="TipBuddy_OptionsFrameResetVars" inherits="GameMenuButtonTemplate" text="Reset All">
+			<Button name="TipBuddy_OptionsFrameResetVars" inherits="GameMenuButtonTemplate" text="TB_RESET_ALL">
 				<Size>
 					<AbsDimension x="80" y="21"/>
 				</Size>
@@ -6080,7 +6083,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 						</Anchor>
 					</Anchors>
 				</Texture>
-				<FontString name="" inherits="GameFontNormal" text="Text Colors">
+				<FontString name="" inherits="GameFontNormal" text="TB_TEXT_COLORS">
 					<Anchors>
 						<Anchor point="TOP" relativeTo="TipBuddy_ColorOptionsFrameHeader">
 							<Offset>
@@ -6148,7 +6151,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 						</Backdrop>
 						<Layers>
 							<Layer level="ARTWORK">
-								<FontString name="" inherits="GameFontNormal" text="|cffffffffNames">
+								<FontString name="" inherits="GameFontNormal" text="TB_NAMES">
 									<Anchors>
 										<Anchor point="CENTER"/>
 									</Anchors>
@@ -6270,7 +6273,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 						</Backdrop>
 						<Layers>
 							<Layer level="ARTWORK">
-								<FontString name="" inherits="GameFontNormal" text="|cffffffffGuild/Titles">
+								<FontString name="" inherits="GameFontNormal" text="TB_GUILD_TITLES">
 									<Anchors>
 										<Anchor point="CENTER"/>
 									</Anchors>
@@ -6404,7 +6407,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 						</Backdrop>
 						<Layers>
 							<Layer level="ARTWORK">
-								<FontString name="" inherits="GameFontNormal" text="|cffffffffLevel Difficulty">
+								<FontString name="" inherits="GameFontNormal" text="TB_LEVEL_DIFFICULTY">
 									<Anchors>
 										<Anchor point="CENTER"/>
 									</Anchors>
@@ -6514,7 +6517,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 						</Backdrop>
 						<Layers>
 							<Layer level="ARTWORK">
-								<FontString name="" inherits="GameFontNormal" text="|cffffffffClasses">
+								<FontString name="" inherits="GameFontNormal" text="TB_CLASSES">
 									<Anchors>
 										<Anchor point="CENTER"/>
 									</Anchors>
@@ -6672,7 +6675,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 						</Backdrop>
 						<Layers>
 							<Layer level="ARTWORK">
-								<FontString name="" inherits="GameFontNormal" text="|cffffffffUnique Units">
+								<FontString name="" inherits="GameFontNormal" text="TB_UNIQUE_UNITS">
 									<Anchors>
 										<Anchor point="CENTER"/>
 									</Anchors>
@@ -6734,7 +6737,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 						</Backdrop>
 						<Layers>
 							<Layer level="ARTWORK">
-								<FontString name="" inherits="GameFontNormal" text="|cffffffffOther">
+								<FontString name="" inherits="GameFontNormal" text="TB_OTHER">
 									<Anchors>
 										<Anchor point="CENTER"/>
 									</Anchors>
@@ -6788,7 +6791,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 				</Frames>
 			</Frame>
 
-			<Button name="TipBuddy_ColorOptionsFrameOkay" inherits="GameMenuButtonTemplate" text="Okay">
+			<Button name="TipBuddy_ColorOptionsFrameOkay" inherits="GameMenuButtonTemplate" text="TB_OKAY">
 				<Anchors>
 					<Anchor point="BOTTOM">
 						<Offset>
@@ -6924,7 +6927,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 					</OnLoad>
 				</Scripts>
 			</Frame>
-			<Button name="TBColorPickerCancelButton" inherits="GameMenuButtonTemplate" text="CANCEL">
+			<Button name="TBColorPickerCancelButton" inherits="GameMenuButtonTemplate" text="TB_CANCEL_CAPS">
 				<Anchors>
 					<Anchor point="BOTTOMRIGHT">
 						<Offset>
@@ -6941,7 +6944,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 					</OnClick>
 				</Scripts>
 			</Button>
-			<Button name="TBColorPickerOkayButton" inherits="GameMenuButtonTemplate" text="OKAY">
+			<Button name="TBColorPickerOkayButton" inherits="GameMenuButtonTemplate" text="TB_OKAY_CAPS">
 				<Anchors>
 					<Anchor point="RIGHT" relativeTo="TBColorPickerCancelButton" relativePoint="LEFT">
 						<Offset>
@@ -7009,7 +7012,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 								</Anchor>
 							</Anchors>
 						</FontString>
-						<FontString name="$parentTextUpdate" inherits="GameFontHighlightSmall" text="Alpha">
+						<FontString name="$parentTextUpdate" inherits="GameFontHighlightSmall" text="TB_ALPHA">
 							<Anchors>
 								<Anchor point="LEFT" relativePoint="RIGHT">
 									<Offset>
@@ -7182,7 +7185,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 					</OnLoad>
 				</Scripts>
 			</Frame>
-			<Button name="TBColorPickerCancelButton_Text" inherits="GameMenuButtonTemplate" text="CANCEL">
+			<Button name="TBColorPickerCancelButton_Text" inherits="GameMenuButtonTemplate" text="TB_CANCEL_CAPS">
 				<Anchors>
 					<Anchor point="BOTTOMRIGHT">
 						<Offset>
@@ -7199,7 +7202,7 @@ C:\Projects\WoW\Bin\Interface\FrameXML\UI.xsd">
 					</OnClick>
 				</Scripts>
 			</Button>
-			<Button name="TBColorPickerOkayButton_Text" inherits="GameMenuButtonTemplate" text="OKAY">
+			<Button name="TBColorPickerOkayButton_Text" inherits="GameMenuButtonTemplate" text="TB_OKAY_CAPS">
 				<Anchors>
 					<Anchor point="RIGHT" relativeTo="TBColorPickerCancelButton_Text" relativePoint="LEFT">
 						<Offset>
